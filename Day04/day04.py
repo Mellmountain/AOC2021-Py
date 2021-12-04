@@ -63,11 +63,3 @@ for num in numbers:
 
 print("Part 1: ", score_board(first_winner) * first_winner_id)
 print("Part 2: ", score_board(last_winner) * last_winner_id)
-
-
-        
-
-
-                    
-
-
