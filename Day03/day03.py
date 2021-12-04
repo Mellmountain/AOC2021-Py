@@ -3,8 +3,8 @@ input = list(open('Day03\\input.txt').read().splitlines())
 gamma_rate = ''
 epsilon_rate = ''
 oxygen_rating = input.copy()
-oxygen_remove = []
 CO2_rating = input.copy()
+oxygen_remove = []
 CO2_remove = []
 
 
@@ -17,7 +17,7 @@ for i in range(0, len(input[0])):
         gamma_rate += '1'    
         epsilon_rate += '0'
         
-    elif ones < (len(input) - ones):
+    else:
         gamma_rate += '0'
         epsilon_rate += '1'
         
