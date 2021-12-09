@@ -25,19 +25,19 @@ b    .  b    .  .    c  b    c  b    c
     The decode method tries to map what number that 
     hides behind a specific segment input
 
-    input of length 2, 3, 4 and 7 are certain and
+    segment(s) of length 2, 3, 4 and 7 are certain and
     maps to numbers 1, 7, 4 and 8 respectively
 
     input of length 5 is either 2, 3 or 5
     We can deduce what number it is by looking at
-    the input segments (encoded).
+    the input segments (encoded) and segments from known numbers.
     - 3 is the only number that has all segments from 1
     - 5 is the only number that has all segments from 9
     If none of the above are true for the input it must be a 2.
 
     input of lenth 6 is either 0, 6 or 9
     Just like input of length 5 we can deduce what number 
-    it is by looking at the input segments (encoded).
+    it is by looking at the input segments (encoded) and segments from known numbers.
     - 9 is the only number that has all segments from 4
     - 6 is the only number that does not have all segments from 1
     If none of the above are true for the input it must be a 0
