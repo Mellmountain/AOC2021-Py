@@ -2,10 +2,10 @@ input = list(open('Day09\\input.txt').read().splitlines())
 
 height_map =[]
 for line in input:
-    row = []
+    y = []
     for i,v in enumerate(line):
-        row.append(int(v))
-    height_map.append(row)
+        y.append(int(v))
+    height_map.append(y)
 
 def getNeigbourValues(x, y):
     values = []
@@ -47,21 +47,20 @@ def getBasinSize(x, y):
                 coords.append(neighbour)
     return size
 
-
 basins = []
-part1 = 0
-for row, rv in enumerate(height_map):
-    for col, cv in enumerate(rv):
+risk_level = 0
+for y, rv in enumerate(height_map):
+    for x, height in enumerate(rv):
         lowest = True
-        for neighbour in getNeigbourValues(col, row):
-            if cv >= neighbour:
+        for neighbour_height in getNeigbourValues(x, y):
+            if height >= neighbour_height:
                 lowest = False
                 break
         if lowest:
-            part1 += cv + 1
-            basins.append(getBasinSize(col, row))
+            risk_level += height + 1
+            basins.append(getBasinSize(x, y))
 
 basins = sorted(basins, reverse=True)
-print(part1)
-print(basins[0] * basins[1] * basins[2])
+print("Part 1: ", risk_level)
+print("Part 2: ", basins[0] * basins[1] * basins[2])
 
